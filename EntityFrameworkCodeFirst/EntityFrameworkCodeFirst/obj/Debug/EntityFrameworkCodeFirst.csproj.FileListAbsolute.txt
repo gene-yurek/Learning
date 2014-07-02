@@ -1,0 +1,1 @@
+C:\Yurek\GitHub\Learning\EntityFrameworkCodeFirst\EntityFrameworkCodeFirst\bin\Debug\EntityFrameworkCodeFirst.exe.config

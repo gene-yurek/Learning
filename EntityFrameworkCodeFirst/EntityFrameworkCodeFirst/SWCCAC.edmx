@@ -1,0 +1,614 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SWCCACModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblInventory">
+          <Key>
+            <PropertyRef Name="InventoryID" />
+          </Key>
+          <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupID" Type="int" Nullable="false" />
+          <Property Name="SupplierID" Type="int" Nullable="false" />
+          <Property Name="ManufID" Type="int" Nullable="false" />
+          <Property Name="CCACSKU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ManufSKU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UPCCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Size" Type="nvarchar" MaxLength="50" />
+          <Property Name="GST" Type="bit" Nullable="false" />
+          <Property Name="PST" Type="bit" Nullable="false" />
+          <Property Name="LatexFree" Type="bit" Nullable="false" />
+          <Property Name="SupplierQtyUnit" Type="smallint" Nullable="false" />
+          <Property Name="SupplierQtyCost" Type="money" Nullable="false" />
+          <Property Name="QtyOnHand" Type="int" />
+          <Property Name="SuggestedRetailMargin" Type="float" Nullable="false" />
+          <Property Name="DaysInventory" Type="smallint" Nullable="false" />
+          <Property Name="TempSKU" Type="nvarchar" MaxLength="50" />
+          <Property Name="TempDel" Type="bit" />
+          <Property Name="DaysUse" Type="smallint" />
+          <Property Name="TempOldPrice" Type="money" />
+          <Property Name="SupplierContractNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierContractExpiryDate" Type="datetime" />
+          <Property Name="SupplierSKU" Type="nvarchar" MaxLength="50" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductGroup" Type="nvarchar" MaxLength="255" />
+          <Property Name="Manufacturer" Type="nvarchar" MaxLength="255" />
+          <Property Name="PickLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="BackupLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="UOMonHand" Type="int" />
+          <Property Name="UnitsonHand" Type="int" />
+          <Property Name="ynUpdateQtyOnHand" Type="bit" />
+          <Property Name="dtLastRevised" Type="datetime" />
+          <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblOrder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PatientID" Type="int" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="FHNId" Type="int" />
+          <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderTypeID" Type="int" />
+          <Property Name="NursingAgencyId" Type="int" />
+          <Property Name="AgencyID" Type="int" Nullable="false" />
+          <Property Name="LocationID" Type="int" />
+          <Property Name="DriverID" Type="int" />
+          <Property Name="ToBeCollected$" Type="money" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="OrderTime" Type="time" Precision="0" />
+          <Property Name="CCACPO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DatePromised" Type="datetime" />
+          <Property Name="TimePromised" Type="time" Precision="0" />
+          <Property Name="OrderNote" Type="nvarchar(max)" />
+          <Property Name="Collected$" Type="money" />
+          <Property Name="DateDelivered" Type="datetime" />
+          <Property Name="TimeDelivered" Type="time" Precision="0" />
+          <Property Name="SalesPerson" Type="nvarchar" MaxLength="50" />
+          <Property Name="Paid" Type="bit" />
+          <Property Name="OrdDatePaid" Type="datetime" />
+          <Property Name="Closed" Type="bit" />
+          <Property Name="Audited" Type="bit" />
+          <Property Name="OrderDelCost" Type="money" />
+          <Property Name="DeliverNote" Type="nvarchar" MaxLength="100" />
+          <Property Name="DeliveryFailureReason" Type="int" />
+          <Property Name="DeliveryFailureComments" Type="nvarchar(max)" />
+          <Property Name="PrescriptionIncluded" Type="bit" />
+          <Property Name="HazardousMaterials" Type="bit" />
+          <Property Name="Refrigerate" Type="bit" />
+          <Property Name="CCACOrderType" Type="nvarchar" MaxLength="1" />
+          <Property Name="PMILinkId" Type="int" />
+          <Property Name="BilltoAgency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Terms" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShipVia" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeliveryCategory" Type="tinyint" />
+          <Property Name="TimeOut" Type="datetime" />
+          <Property Name="DatePickup" Type="datetime" />
+          <Property Name="TimePickup" Type="time" Precision="0" />
+          <Property Name="SPPaymentDate" Type="datetime" />
+          <Property Name="ynPaySP" Type="bit" />
+          <Property Name="ynUpdateDeliveryDate" Type="bit" />
+          <Property Name="StatusId" Type="smallint" />
+          <Property Name="dtLastRevised" Type="datetime" />
+          <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblOrderDetail">
+          <Key>
+            <PropertyRef Name="LineID" />
+          </Key>
+          <Property Name="LineID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="CCACSKU" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="GSTPayable" Type="bit" />
+          <Property Name="GST$Amount" Type="money" Nullable="false" />
+          <Property Name="PSTPayable" Type="bit" Nullable="false" />
+          <Property Name="PST$Amount" Type="money" Nullable="false" />
+          <Property Name="SellingPrice$" Type="money" Nullable="false" />
+          <Property Name="CostPrice$" Type="money" />
+          <Property Name="BOQty" Type="int" />
+          <Property Name="BOExpectedDate" Type="datetime" />
+          <Property Name="BODeliveryDate" Type="datetime" />
+          <Property Name="BOReason" Type="nvarchar" MaxLength="50" />
+          <Property Name="BONewInvoiceNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="BONewInvoiceDate" Type="datetime" />
+          <Property Name="CCACLineID" Type="int" />
+          <Property Name="ConfirmationFlag" Type="bit" />
+          <Property Name="BackOrderFlag" Type="bit" />
+          <Property Name="OrderDetailComments" Type="nvarchar" MaxLength="60" />
+          <Property Name="ItemUnitCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="OrderDetailClass" Type="nvarchar" MaxLength="1" />
+          <Property Name="DateDelivered" Type="datetime" />
+          <Property Name="PMIOrderType" Type="nvarchar" MaxLength="1" />
+          <Property Name="BillingTag" Type="nvarchar" MaxLength="1" />
+          <Property Name="BillingStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillInvoiceRef" Type="int" />
+          <Property Name="ynNotCollectible" Type="bit" />
+          <Property Name="SAFReasonCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PMILinkID" Type="int" />
+          <Property Name="MinRentalDetail" Type="money" />
+          <Property Name="PMIRecordType" Type="nvarchar" MaxLength="1" />
+          <Property Name="CCACRARef" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalPaid" Type="money" />
+          <Property Name="RAProcessDate" Type="datetime" />
+          <Property Name="RentalCapped" Type="bit" />
+          <Property Name="SPPaymentDate" Type="datetime" />
+          <Property Name="ynPaySP" Type="bit" />
+          <Property Name="dtShipmentExport" Type="datetime" />
+          <Property Name="dtLastRevised" Type="datetime" />
+          <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPatient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyId" Type="int" />
+          <Property Name="TrackingNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="CCACID" Type="int" Nullable="false" />
+          <Property Name="PatCWId" Type="int" />
+          <Property Name="FHTId" Type="int" />
+          <Property Name="Demographic1ID" Type="int" />
+          <Property Name="Demographic2ID" Type="int" />
+          <Property Name="DrugCard" Type="nvarchar" MaxLength="50" />
+          <Property Name="PatientOHIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="Salutation" Type="nvarchar" MaxLength="10" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Street1" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Street2" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="7" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Phone2" Type="nvarchar" MaxLength="255" />
+          <Property Name="PatientSince" Type="datetime" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="1" />
+          <Property Name="SpecialInstructions" Type="nvarchar(max)" />
+          <Property Name="Status" Type="nvarchar" MaxLength="15" />
+          <Property Name="Diagnosis" Type="nvarchar(max)" />
+          <Property Name="DeliveryAreaID" Type="int" />
+          <Property Name="DeliveryNote" Type="nvarchar" MaxLength="255" />
+          <Property Name="NotificationMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="dtLastRevised" Type="datetime" />
+          <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <Association Name="tblOrder${90EF156F-C203-4156-A7FC-C9A8CFDAC228}">
+          <End Role="tblPatient" Type="Self.tblPatient" Multiplicity="1" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPatient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="tblOrder">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SWCCACModelStoreContainer">
+          <EntitySet Name="tblInventory" EntityType="Self.tblInventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblOrderDetail" EntityType="Self.tblOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPatient" EntityType="Self.tblPatient" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="tblOrder${90EF156F-C203-4156-A7FC-C9A8CFDAC228}" Association="Self.tblOrder${90EF156F-C203-4156-A7FC-C9A8CFDAC228}">
+            <End Role="tblPatient" EntitySet="tblPatient" />
+            <End Role="tblOrder" EntitySet="tblOrder" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SWCCACModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblInventory" BaseType="SWCCACModel.tblOrderDetail">
+          <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupID" Type="Int32" Nullable="false" />
+          <Property Name="SupplierID" Type="Int32" Nullable="false" />
+          <Property Name="ManufID" Type="Int32" Nullable="false" />
+          <Property Name="CCACSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ManufSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UPCCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GST" Type="Boolean" Nullable="false" />
+          <Property Name="PST" Type="Boolean" Nullable="false" />
+          <Property Name="LatexFree" Type="Boolean" Nullable="false" />
+          <Property Name="SupplierQtyUnit" Type="Int16" Nullable="false" />
+          <Property Name="SupplierQtyCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="QtyOnHand" Type="Int32" />
+          <Property Name="SuggestedRetailMargin" Type="Double" Nullable="false" />
+          <Property Name="DaysInventory" Type="Int16" Nullable="false" />
+          <Property Name="TempSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TempDel" Type="Boolean" />
+          <Property Name="DaysUse" Type="Int16" />
+          <Property Name="TempOldPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SupplierContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierContractExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="SupplierSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacturer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PickLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BackupLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UOMonHand" Type="Int32" />
+          <Property Name="UnitsonHand" Type="Int32" />
+          <Property Name="ynUpdateQtyOnHand" Type="Boolean" />
+          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
+          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblOrder">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PatientID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="FHNId" Type="Int32" />
+          <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderTypeID" Type="Int32" />
+          <Property Name="NursingAgencyId" Type="Int32" />
+          <Property Name="AgencyID" Type="Int32" Nullable="false" />
+          <Property Name="LocationID" Type="Int32" />
+          <Property Name="DriverID" Type="Int32" />
+          <Property Name="ToBeCollected_" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderTime" Type="Time" Precision="0" />
+          <Property Name="CCACPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DatePromised" Type="DateTime" Precision="3" />
+          <Property Name="TimePromised" Type="Time" Precision="0" />
+          <Property Name="OrderNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Collected_" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DateDelivered" Type="DateTime" Precision="3" />
+          <Property Name="TimeDelivered" Type="Time" Precision="0" />
+          <Property Name="SalesPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Paid" Type="Boolean" />
+          <Property Name="OrdDatePaid" Type="DateTime" Precision="3" />
+          <Property Name="Closed" Type="Boolean" />
+          <Property Name="Audited" Type="Boolean" />
+          <Property Name="OrderDelCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DeliverNote" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryFailureReason" Type="Int32" />
+          <Property Name="DeliveryFailureComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PrescriptionIncluded" Type="Boolean" />
+          <Property Name="HazardousMaterials" Type="Boolean" />
+          <Property Name="Refrigerate" Type="Boolean" />
+          <Property Name="CCACOrderType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="PMILinkId" Type="Int32" />
+          <Property Name="BilltoAgency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Terms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShipVia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryCategory" Type="Byte" />
+          <Property Name="TimeOut" Type="DateTime" Precision="3" />
+          <Property Name="DatePickup" Type="DateTime" Precision="3" />
+          <Property Name="TimePickup" Type="Time" Precision="0" />
+          <Property Name="SPPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ynPaySP" Type="Boolean" />
+          <Property Name="ynUpdateDeliveryDate" Type="Boolean" />
+          <Property Name="StatusId" Type="Int16" />
+          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
+          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblPatient" Relationship="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" FromRole="tblOrder" ToRole="tblPatient" />
+        </EntityType>
+        <EntityType Name="tblOrderDetail">
+          <Key>
+            <PropertyRef Name="LineID" />
+          </Key>
+          <Property Name="LineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="CCACSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="GSTPayable" Type="Boolean" />
+          <Property Name="GST_Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PSTPayable" Type="Boolean" Nullable="false" />
+          <Property Name="PST_Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="SellingPrice_" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="CostPrice_" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BOQty" Type="Int32" />
+          <Property Name="BOExpectedDate" Type="DateTime" Precision="3" />
+          <Property Name="BODeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="BOReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BONewInvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BONewInvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="CCACLineID" Type="Int32" />
+          <Property Name="ConfirmationFlag" Type="Boolean" />
+          <Property Name="BackOrderFlag" Type="Boolean" />
+          <Property Name="OrderDetailComments" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ItemUnitCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDetailClass" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DateDelivered" Type="DateTime" Precision="3" />
+          <Property Name="PMIOrderType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BillingTag" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BillingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillInvoiceRef" Type="Int32" />
+          <Property Name="ynNotCollectible" Type="Boolean" />
+          <Property Name="SAFReasonCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PMILinkID" Type="Int32" />
+          <Property Name="MinRentalDetail" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PMIRecordType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CCACRARef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPaid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RAProcessDate" Type="DateTime" Precision="3" />
+          <Property Name="RentalCapped" Type="Boolean" />
+          <Property Name="SPPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ynPaySP" Type="Boolean" />
+          <Property Name="dtShipmentExport" Type="DateTime" Precision="3" />
+          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
+          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblPatient">
+          <Key>
+            <PropertyRef Name="PatientID" />
+          </Key>
+          <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyId" Type="Int32" />
+          <Property Name="TrackingNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CCACID" Type="Int32" Nullable="false" />
+          <Property Name="PatCWId" Type="Int32" />
+          <Property Name="FHTId" Type="Int32" />
+          <Property Name="Demographic1ID" Type="Int32" />
+          <Property Name="Demographic2ID" Type="Int32" />
+          <Property Name="DrugCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PatientOHIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Salutation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostalCode" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PatientSince" Type="DateTime" Precision="3" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="SpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryAreaID" Type="Int32" />
+          <Property Name="DeliveryNote" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NotificationMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
+          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblOrders" Relationship="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" FromRole="tblPatient" ToRole="tblOrder" />
+        </EntityType>
+        <Association Name="tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_">
+          <End Role="tblPatient" Type="Self.tblPatient" Multiplicity="1" />
+          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPatient">
+              <PropertyRef Name="PatientID" />
+            </Principal>
+            <Dependent Role="tblOrder">
+              <PropertyRef Name="PatientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SWCCACEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblOrders" EntityType="Self.tblOrder" />
+          <EntitySet Name="tblOrderDetails" EntityType="Self.tblOrderDetail" />
+          <EntitySet Name="tblPatients" EntityType="Self.tblPatient" />
+          <AssociationSet Name="tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" Association="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_">
+            <End Role="tblPatient" EntitySet="tblPatients" />
+            <End Role="tblOrder" EntitySet="tblOrders" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SWCCACModelStoreContainer" CdmEntityContainer="SWCCACEntities">
+          <EntitySetMapping Name="tblOrders">
+            <EntityTypeMapping TypeName="SWCCACModel.tblOrder">
+              <MappingFragment StoreEntitySet="tblOrder">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="FHNId" ColumnName="FHNId" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="OrderTypeID" ColumnName="OrderTypeID" />
+                <ScalarProperty Name="NursingAgencyId" ColumnName="NursingAgencyId" />
+                <ScalarProperty Name="AgencyID" ColumnName="AgencyID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+                <ScalarProperty Name="ToBeCollected_" ColumnName="ToBeCollected$" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="CCACPO" ColumnName="CCACPO" />
+                <ScalarProperty Name="DatePromised" ColumnName="DatePromised" />
+                <ScalarProperty Name="TimePromised" ColumnName="TimePromised" />
+                <ScalarProperty Name="OrderNote" ColumnName="OrderNote" />
+                <ScalarProperty Name="Collected_" ColumnName="Collected$" />
+                <ScalarProperty Name="DateDelivered" ColumnName="DateDelivered" />
+                <ScalarProperty Name="TimeDelivered" ColumnName="TimeDelivered" />
+                <ScalarProperty Name="SalesPerson" ColumnName="SalesPerson" />
+                <ScalarProperty Name="Paid" ColumnName="Paid" />
+                <ScalarProperty Name="OrdDatePaid" ColumnName="OrdDatePaid" />
+                <ScalarProperty Name="Closed" ColumnName="Closed" />
+                <ScalarProperty Name="Audited" ColumnName="Audited" />
+                <ScalarProperty Name="OrderDelCost" ColumnName="OrderDelCost" />
+                <ScalarProperty Name="DeliverNote" ColumnName="DeliverNote" />
+                <ScalarProperty Name="DeliveryFailureReason" ColumnName="DeliveryFailureReason" />
+                <ScalarProperty Name="DeliveryFailureComments" ColumnName="DeliveryFailureComments" />
+                <ScalarProperty Name="PrescriptionIncluded" ColumnName="PrescriptionIncluded" />
+                <ScalarProperty Name="HazardousMaterials" ColumnName="HazardousMaterials" />
+                <ScalarProperty Name="Refrigerate" ColumnName="Refrigerate" />
+                <ScalarProperty Name="CCACOrderType" ColumnName="CCACOrderType" />
+                <ScalarProperty Name="PMILinkId" ColumnName="PMILinkId" />
+                <ScalarProperty Name="BilltoAgency" ColumnName="BilltoAgency" />
+                <ScalarProperty Name="Terms" ColumnName="Terms" />
+                <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+                <ScalarProperty Name="OrderedBy" ColumnName="OrderedBy" />
+                <ScalarProperty Name="DeliveryCategory" ColumnName="DeliveryCategory" />
+                <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+                <ScalarProperty Name="DatePickup" ColumnName="DatePickup" />
+                <ScalarProperty Name="TimePickup" ColumnName="TimePickup" />
+                <ScalarProperty Name="SPPaymentDate" ColumnName="SPPaymentDate" />
+                <ScalarProperty Name="ynPaySP" ColumnName="ynPaySP" />
+                <ScalarProperty Name="ynUpdateDeliveryDate" ColumnName="ynUpdateDeliveryDate" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="dtLastRevised" ColumnName="dtLastRevised" />
+                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrderDetails">
+            <EntityTypeMapping TypeName="IsTypeOf(SWCCACModel.tblOrderDetail)">
+              <MappingFragment StoreEntitySet="tblOrderDetail">
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+                <ScalarProperty Name="dtLastRevised" ColumnName="dtLastRevised" />
+                <ScalarProperty Name="dtShipmentExport" ColumnName="dtShipmentExport" />
+                <ScalarProperty Name="ynPaySP" ColumnName="ynPaySP" />
+                <ScalarProperty Name="SPPaymentDate" ColumnName="SPPaymentDate" />
+                <ScalarProperty Name="RentalCapped" ColumnName="RentalCapped" />
+                <ScalarProperty Name="RAProcessDate" ColumnName="RAProcessDate" />
+                <ScalarProperty Name="TotalPaid" ColumnName="TotalPaid" />
+                <ScalarProperty Name="CCACRARef" ColumnName="CCACRARef" />
+                <ScalarProperty Name="PMIRecordType" ColumnName="PMIRecordType" />
+                <ScalarProperty Name="MinRentalDetail" ColumnName="MinRentalDetail" />
+                <ScalarProperty Name="PMILinkID" ColumnName="PMILinkID" />
+                <ScalarProperty Name="SAFReasonCode" ColumnName="SAFReasonCode" />
+                <ScalarProperty Name="ynNotCollectible" ColumnName="ynNotCollectible" />
+                <ScalarProperty Name="BillInvoiceRef" ColumnName="BillInvoiceRef" />
+                <ScalarProperty Name="BillingStatus" ColumnName="BillingStatus" />
+                <ScalarProperty Name="BillingTag" ColumnName="BillingTag" />
+                <ScalarProperty Name="PMIOrderType" ColumnName="PMIOrderType" />
+                <ScalarProperty Name="DateDelivered" ColumnName="DateDelivered" />
+                <ScalarProperty Name="OrderDetailClass" ColumnName="OrderDetailClass" />
+                <ScalarProperty Name="ItemUnitCode" ColumnName="ItemUnitCode" />
+                <ScalarProperty Name="OrderDetailComments" ColumnName="OrderDetailComments" />
+                <ScalarProperty Name="BackOrderFlag" ColumnName="BackOrderFlag" />
+                <ScalarProperty Name="ConfirmationFlag" ColumnName="ConfirmationFlag" />
+                <ScalarProperty Name="CCACLineID" ColumnName="CCACLineID" />
+                <ScalarProperty Name="BONewInvoiceDate" ColumnName="BONewInvoiceDate" />
+                <ScalarProperty Name="BONewInvoiceNo" ColumnName="BONewInvoiceNo" />
+                <ScalarProperty Name="BOReason" ColumnName="BOReason" />
+                <ScalarProperty Name="BODeliveryDate" ColumnName="BODeliveryDate" />
+                <ScalarProperty Name="BOExpectedDate" ColumnName="BOExpectedDate" />
+                <ScalarProperty Name="BOQty" ColumnName="BOQty" />
+                <ScalarProperty Name="CostPrice_" ColumnName="CostPrice$" />
+                <ScalarProperty Name="SellingPrice_" ColumnName="SellingPrice$" />
+                <ScalarProperty Name="PST_Amount" ColumnName="PST$Amount" />
+                <ScalarProperty Name="PSTPayable" ColumnName="PSTPayable" />
+                <ScalarProperty Name="GST_Amount" ColumnName="GST$Amount" />
+                <ScalarProperty Name="GSTPayable" ColumnName="GSTPayable" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="CCACSKU" ColumnName="CCACSKU" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(SWCCACModel.tblInventory)">
+              <MappingFragment StoreEntitySet="tblInventory">
+                
+                
+                <ScalarProperty Name="ynUpdateQtyOnHand" ColumnName="ynUpdateQtyOnHand" />
+                <ScalarProperty Name="UnitsonHand" ColumnName="UnitsonHand" />
+                <ScalarProperty Name="UOMonHand" ColumnName="UOMonHand" />
+                <ScalarProperty Name="BackupLocation" ColumnName="BackupLocation" />
+                <ScalarProperty Name="PickLocation" ColumnName="PickLocation" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="ProductGroup" ColumnName="ProductGroup" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="SupplierSKU" ColumnName="SupplierSKU" />
+                <ScalarProperty Name="SupplierContractExpiryDate" ColumnName="SupplierContractExpiryDate" />
+                <ScalarProperty Name="SupplierContractNumber" ColumnName="SupplierContractNumber" />
+                <ScalarProperty Name="TempOldPrice" ColumnName="TempOldPrice" />
+                <ScalarProperty Name="DaysUse" ColumnName="DaysUse" />
+                <ScalarProperty Name="TempDel" ColumnName="TempDel" />
+                <ScalarProperty Name="TempSKU" ColumnName="TempSKU" />
+                <ScalarProperty Name="DaysInventory" ColumnName="DaysInventory" />
+                <ScalarProperty Name="SuggestedRetailMargin" ColumnName="SuggestedRetailMargin" />
+                <ScalarProperty Name="QtyOnHand" ColumnName="QtyOnHand" />
+                <ScalarProperty Name="SupplierQtyCost" ColumnName="SupplierQtyCost" />
+                <ScalarProperty Name="SupplierQtyUnit" ColumnName="SupplierQtyUnit" />
+                <ScalarProperty Name="LatexFree" ColumnName="LatexFree" />
+                <ScalarProperty Name="PST" ColumnName="PST" />
+                <ScalarProperty Name="GST" ColumnName="GST" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="UPCCode" ColumnName="UPCCode" />
+                <ScalarProperty Name="ManufSKU" ColumnName="ManufSKU" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                
+                <ScalarProperty Name="ManufID" ColumnName="ManufID" />
+                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPatients">
+            <EntityTypeMapping TypeName="SWCCACModel.tblPatient">
+              <MappingFragment StoreEntitySet="tblPatient">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="TrackingNo" ColumnName="TrackingNo" />
+                <ScalarProperty Name="CCACID" ColumnName="CCACID" />
+                <ScalarProperty Name="PatCWId" ColumnName="PatCWId" />
+                <ScalarProperty Name="FHTId" ColumnName="FHTId" />
+                <ScalarProperty Name="Demographic1ID" ColumnName="Demographic1ID" />
+                <ScalarProperty Name="Demographic2ID" ColumnName="Demographic2ID" />
+                <ScalarProperty Name="DrugCard" ColumnName="DrugCard" />
+                <ScalarProperty Name="PatientOHIP" ColumnName="PatientOHIP" />
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Street1" ColumnName="Street1" />
+                <ScalarProperty Name="Street2" ColumnName="Street2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="PatientSince" ColumnName="PatientSince" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+                <ScalarProperty Name="DeliveryAreaID" ColumnName="DeliveryAreaID" />
+                <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
+                <ScalarProperty Name="NotificationMethod" ColumnName="NotificationMethod" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="dtLastRevised" ColumnName="dtLastRevised" />
+                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
