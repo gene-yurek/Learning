@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SWCCACModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PatientID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="FHNId" Type="Int32" />
+    <Property Name="InvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderTypeID" Type="Int32" />
+    <Property Name="NursingAgencyId" Type="Int32" />
+    <Property Name="AgencyID" Type="Int32" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="DriverID" Type="Int32" />
+    <Property Name="ToBeCollected_" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="OrderTime" Type="Time" Precision="0" />
+    <Property Name="CCACPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DatePromised" Type="DateTime" Precision="3" />
+    <Property Name="TimePromised" Type="Time" Precision="0" />
+    <Property Name="OrderNote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Collected_" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DateDelivered" Type="DateTime" Precision="3" />
+    <Property Name="TimeDelivered" Type="Time" Precision="0" />
+    <Property Name="SalesPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Paid" Type="Boolean" />
+    <Property Name="OrdDatePaid" Type="DateTime" Precision="3" />
+    <Property Name="Closed" Type="Boolean" />
+    <Property Name="Audited" Type="Boolean" />
+    <Property Name="OrderDelCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DeliverNote" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryFailureReason" Type="Int32" />
+    <Property Name="DeliveryFailureComments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PrescriptionIncluded" Type="Boolean" />
+    <Property Name="HazardousMaterials" Type="Boolean" />
+    <Property Name="Refrigerate" Type="Boolean" />
+    <Property Name="CCACOrderType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="PMILinkId" Type="Int32" />
+    <Property Name="BilltoAgency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Terms" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ShipVia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OrderedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryCategory" Type="Byte" />
+    <Property Name="TimeOut" Type="DateTime" Precision="3" />
+    <Property Name="DatePickup" Type="DateTime" Precision="3" />
+    <Property Name="TimePickup" Type="Time" Precision="0" />
+    <Property Name="SPPaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="ynPaySP" Type="Boolean" />
+    <Property Name="ynUpdateDeliveryDate" Type="Boolean" />
+    <Property Name="StatusId" Type="Int16" />
+    <NavigationProperty Name="tblPatient" Relationship="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" FromRole="tblOrder" ToRole="tblPatient" />
+  </EntityType>
+  <EntityType Name="tblPatient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Int32" />
+    <Property Name="TrackingNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CCACID" Type="Int32" Nullable="false" />
+    <Property Name="PatCWId" Type="Int32" />
+    <Property Name="FHTId" Type="Int32" />
+    <Property Name="Demographic1ID" Type="Int32" />
+    <Property Name="Demographic2ID" Type="Int32" />
+    <Property Name="DrugCard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PatientOHIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salutation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Street1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Street2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PostalCode" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Phone2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PatientSince" Type="DateTime" Precision="3" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Sex" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialInstructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Diagnosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryAreaID" Type="Int32" />
+    <Property Name="DeliveryNote" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NotificationMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblOrders" Relationship="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" FromRole="tblPatient" ToRole="tblOrder" />
+  </EntityType>
+  <Association Name="tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_">
+    <End Role="tblPatient" Type="Self.tblPatient" Multiplicity="1" />
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="tblOrder">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SWCCACEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblOrders" EntityType="Self.tblOrder" />
+    <EntitySet Name="tblPatients" EntityType="Self.tblPatient" />
+    <AssociationSet Name="tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" Association="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_">
+      <End Role="tblPatient" EntitySet="tblPatients" />
+      <End Role="tblOrder" EntitySet="tblOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -4,47 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SWCCACModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="tblInventory">
-          <Key>
-            <PropertyRef Name="InventoryID" />
-          </Key>
-          <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="GroupID" Type="int" Nullable="false" />
-          <Property Name="SupplierID" Type="int" Nullable="false" />
-          <Property Name="ManufID" Type="int" Nullable="false" />
-          <Property Name="CCACSKU" Type="nvarchar" MaxLength="50" />
-          <Property Name="Product" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="BrandName" Type="nvarchar" MaxLength="50" />
-          <Property Name="ManufSKU" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="UPCCode" Type="nvarchar" MaxLength="50" />
-          <Property Name="Size" Type="nvarchar" MaxLength="50" />
-          <Property Name="GST" Type="bit" Nullable="false" />
-          <Property Name="PST" Type="bit" Nullable="false" />
-          <Property Name="LatexFree" Type="bit" Nullable="false" />
-          <Property Name="SupplierQtyUnit" Type="smallint" Nullable="false" />
-          <Property Name="SupplierQtyCost" Type="money" Nullable="false" />
-          <Property Name="QtyOnHand" Type="int" />
-          <Property Name="SuggestedRetailMargin" Type="float" Nullable="false" />
-          <Property Name="DaysInventory" Type="smallint" Nullable="false" />
-          <Property Name="TempSKU" Type="nvarchar" MaxLength="50" />
-          <Property Name="TempDel" Type="bit" />
-          <Property Name="DaysUse" Type="smallint" />
-          <Property Name="TempOldPrice" Type="money" />
-          <Property Name="SupplierContractNumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="SupplierContractExpiryDate" Type="datetime" />
-          <Property Name="SupplierSKU" Type="nvarchar" MaxLength="50" />
-          <Property Name="UOM" Type="nvarchar" MaxLength="50" />
-          <Property Name="ProductGroup" Type="nvarchar" MaxLength="255" />
-          <Property Name="Manufacturer" Type="nvarchar" MaxLength="255" />
-          <Property Name="PickLocation" Type="nvarchar" MaxLength="50" />
-          <Property Name="BackupLocation" Type="nvarchar" MaxLength="50" />
-          <Property Name="UOMonHand" Type="int" />
-          <Property Name="UnitsonHand" Type="int" />
-          <Property Name="ynUpdateQtyOnHand" Type="bit" />
-          <Property Name="dtLastRevised" Type="datetime" />
-          <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-        </EntityType>
+    <Schema Namespace="SWCCACModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblOrder">
           <Key>
             <PropertyRef Name="OrderID" />
@@ -194,7 +154,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SWCCACModelStoreContainer">
-          <EntitySet Name="tblInventory" EntityType="Self.tblInventory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblOrderDetail" EntityType="Self.tblOrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblPatient" EntityType="Self.tblPatient" Schema="dbo" store:Type="Tables" />
@@ -203,49 +162,11 @@
             <End Role="tblOrder" EntitySet="tblOrder" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SWCCACModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="tblInventory" BaseType="SWCCACModel.tblOrderDetail">
-          <Property Name="InventoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="GroupID" Type="Int32" Nullable="false" />
-          <Property Name="SupplierID" Type="Int32" Nullable="false" />
-          <Property Name="ManufID" Type="Int32" Nullable="false" />
-          <Property Name="CCACSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Product" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="BrandName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ManufSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UPCCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="GST" Type="Boolean" Nullable="false" />
-          <Property Name="PST" Type="Boolean" Nullable="false" />
-          <Property Name="LatexFree" Type="Boolean" Nullable="false" />
-          <Property Name="SupplierQtyUnit" Type="Int16" Nullable="false" />
-          <Property Name="SupplierQtyCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="QtyOnHand" Type="Int32" />
-          <Property Name="SuggestedRetailMargin" Type="Double" Nullable="false" />
-          <Property Name="DaysInventory" Type="Int16" Nullable="false" />
-          <Property Name="TempSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TempDel" Type="Boolean" />
-          <Property Name="DaysUse" Type="Int16" />
-          <Property Name="TempOldPrice" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="SupplierContractNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="SupplierContractExpiryDate" Type="DateTime" Precision="3" />
-          <Property Name="SupplierSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ProductGroup" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Manufacturer" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="PickLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BackupLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UOMonHand" Type="Int32" />
-          <Property Name="UnitsonHand" Type="Int32" />
-          <Property Name="ynUpdateQtyOnHand" Type="Boolean" />
-          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
-          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-        </EntityType>
-        <EntityType Name="tblOrder">
+        <EntityType Name="Order">
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
@@ -295,58 +216,9 @@
           <Property Name="ynPaySP" Type="Boolean" />
           <Property Name="ynUpdateDeliveryDate" Type="Boolean" />
           <Property Name="StatusId" Type="Int16" />
-          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
-          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="tblPatient" Relationship="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" FromRole="tblOrder" ToRole="tblPatient" />
         </EntityType>
-        <EntityType Name="tblOrderDetail">
-          <Key>
-            <PropertyRef Name="LineID" />
-          </Key>
-          <Property Name="LineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="OrderID" Type="Int32" Nullable="false" />
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="CCACSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Quantity" Type="Int32" Nullable="false" />
-          <Property Name="GSTPayable" Type="Boolean" />
-          <Property Name="GST_Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="PSTPayable" Type="Boolean" Nullable="false" />
-          <Property Name="PST_Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="SellingPrice_" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
-          <Property Name="CostPrice_" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="BOQty" Type="Int32" />
-          <Property Name="BOExpectedDate" Type="DateTime" Precision="3" />
-          <Property Name="BODeliveryDate" Type="DateTime" Precision="3" />
-          <Property Name="BOReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BONewInvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BONewInvoiceDate" Type="DateTime" Precision="3" />
-          <Property Name="CCACLineID" Type="Int32" />
-          <Property Name="ConfirmationFlag" Type="Boolean" />
-          <Property Name="BackOrderFlag" Type="Boolean" />
-          <Property Name="OrderDetailComments" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
-          <Property Name="ItemUnitCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OrderDetailClass" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="DateDelivered" Type="DateTime" Precision="3" />
-          <Property Name="PMIOrderType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="BillingTag" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="BillingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BillInvoiceRef" Type="Int32" />
-          <Property Name="ynNotCollectible" Type="Boolean" />
-          <Property Name="SAFReasonCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PMILinkID" Type="Int32" />
-          <Property Name="MinRentalDetail" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="PMIRecordType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Name="CCACRARef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TotalPaid" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="RAProcessDate" Type="DateTime" Precision="3" />
-          <Property Name="RentalCapped" Type="Boolean" />
-          <Property Name="SPPaymentDate" Type="DateTime" Precision="3" />
-          <Property Name="ynPaySP" Type="Boolean" />
-          <Property Name="dtShipmentExport" Type="DateTime" Precision="3" />
-          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
-          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-        </EntityType>
-        <EntityType Name="tblPatient">
+        <EntityType Name="Patient">
           <Key>
             <PropertyRef Name="PatientID" />
           </Key>
@@ -379,13 +251,11 @@
           <Property Name="DeliveryNote" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="NotificationMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="EmailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="dtLastRevised" Type="DateTime" Precision="3" />
-          <Property Name="SSMA_TimeStamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="tblOrders" Relationship="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" FromRole="tblPatient" ToRole="tblOrder" />
         </EntityType>
         <Association Name="tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_">
-          <End Role="tblPatient" Type="Self.tblPatient" Multiplicity="1" />
-          <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+          <End Role="tblPatient" Type="SWCCACModel.Patient" Multiplicity="1" />
+          <End Role="tblOrder" Type="SWCCACModel.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tblPatient">
               <PropertyRef Name="PatientID" />
@@ -396,22 +266,67 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="SWCCACEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblOrders" EntityType="Self.tblOrder" />
-          <EntitySet Name="tblOrderDetails" EntityType="Self.tblOrderDetail" />
-          <EntitySet Name="tblPatients" EntityType="Self.tblPatient" />
+          <EntitySet Name="Orders" EntityType="SWCCACModel.Order" />
+          <EntitySet Name="Patients" EntityType="SWCCACModel.Patient" />
           <AssociationSet Name="tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_" Association="Self.tblOrder__90EF156F_C203_4156_A7FC_C9A8CFDAC228_">
-            <End Role="tblPatient" EntitySet="tblPatients" />
-            <End Role="tblOrder" EntitySet="tblOrders" />
+            <End Role="tblPatient" EntitySet="Patients" />
+            <End Role="tblOrder" EntitySet="Orders" />
           </AssociationSet>
+          <EntitySet Name="OrderDetails" EntityType="SWCCACModel.OrderDetail" />
         </EntityContainer>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="LineID" />
+          </Key>
+          <Property Name="LineID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="CCACSKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="GSTPayable" Type="Boolean" />
+          <Property Name="GST_Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PSTPayable" Type="Boolean" Nullable="false" />
+          <Property Name="PST_Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="SellingPrice_" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="CostPrice_" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BOQty" Type="Int32" />
+          <Property Name="BOExpectedDate" Type="DateTime" Precision="3" />
+          <Property Name="BODeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="BOReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BONewInvoiceNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BONewInvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="CCACLineID" Type="Int32" />
+          <Property Name="ConfirmationFlag" Type="Boolean" />
+          <Property Name="BackOrderFlag" Type="Boolean" />
+          <Property Name="OrderDetailComments" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="ItemUnitCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDetailClass" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DateDelivered" Type="DateTime" Precision="3" />
+          <Property Name="PMIOrderType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BillingTag" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="BillingStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillInvoiceRef" Type="Int32" />
+          <Property Name="ynNotCollectible" Type="Boolean" />
+          <Property Name="SAFReasonCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PMILinkID" Type="Int32" />
+          <Property Name="MinRentalDetail" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PMIRecordType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="CCACRARef" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TotalPaid" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RAProcessDate" Type="DateTime" Precision="3" />
+          <Property Name="RentalCapped" Type="Boolean" />
+          <Property Name="SPPaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="ynPaySP" Type="Boolean" />
+          <Property Name="dtShipmentExport" Type="DateTime" Precision="3" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SWCCACModelStoreContainer" CdmEntityContainer="SWCCACEntities">
-          <EntitySetMapping Name="tblOrders">
-            <EntityTypeMapping TypeName="SWCCACModel.tblOrder">
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="SWCCACModel.Order">
               <MappingFragment StoreEntitySet="tblOrder">
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
                 <ScalarProperty Name="PatientID" ColumnName="PatientID" />
@@ -459,17 +374,47 @@
                 <ScalarProperty Name="ynPaySP" ColumnName="ynPaySP" />
                 <ScalarProperty Name="ynUpdateDeliveryDate" ColumnName="ynUpdateDeliveryDate" />
                 <ScalarProperty Name="StatusId" ColumnName="StatusId" />
-                <ScalarProperty Name="dtLastRevised" ColumnName="dtLastRevised" />
-                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="tblOrderDetails">
-            <EntityTypeMapping TypeName="IsTypeOf(SWCCACModel.tblOrderDetail)">
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="SWCCACModel.Patient">
+              <MappingFragment StoreEntitySet="tblPatient">
+                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="TrackingNo" ColumnName="TrackingNo" />
+                <ScalarProperty Name="CCACID" ColumnName="CCACID" />
+                <ScalarProperty Name="PatCWId" ColumnName="PatCWId" />
+                <ScalarProperty Name="FHTId" ColumnName="FHTId" />
+                <ScalarProperty Name="Demographic1ID" ColumnName="Demographic1ID" />
+                <ScalarProperty Name="Demographic2ID" ColumnName="Demographic2ID" />
+                <ScalarProperty Name="DrugCard" ColumnName="DrugCard" />
+                <ScalarProperty Name="PatientOHIP" ColumnName="PatientOHIP" />
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Street1" ColumnName="Street1" />
+                <ScalarProperty Name="Street2" ColumnName="Street2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="PatientSince" ColumnName="PatientSince" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+                <ScalarProperty Name="DeliveryAreaID" ColumnName="DeliveryAreaID" />
+                <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
+                <ScalarProperty Name="NotificationMethod" ColumnName="NotificationMethod" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="SWCCACModel.OrderDetail">
               <MappingFragment StoreEntitySet="tblOrderDetail">
-                <ScalarProperty Name="LineID" ColumnName="LineID" />
-                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
-                <ScalarProperty Name="dtLastRevised" ColumnName="dtLastRevised" />
                 <ScalarProperty Name="dtShipmentExport" ColumnName="dtShipmentExport" />
                 <ScalarProperty Name="ynPaySP" ColumnName="ynPaySP" />
                 <ScalarProperty Name="SPPaymentDate" ColumnName="SPPaymentDate" />
@@ -509,82 +454,7 @@
                 <ScalarProperty Name="CCACSKU" ColumnName="CCACSKU" />
                 <ScalarProperty Name="ProductID" ColumnName="ProductID" />
                 <ScalarProperty Name="OrderID" ColumnName="OrderID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="IsTypeOf(SWCCACModel.tblInventory)">
-              <MappingFragment StoreEntitySet="tblInventory">
-                
-                
-                <ScalarProperty Name="ynUpdateQtyOnHand" ColumnName="ynUpdateQtyOnHand" />
-                <ScalarProperty Name="UnitsonHand" ColumnName="UnitsonHand" />
-                <ScalarProperty Name="UOMonHand" ColumnName="UOMonHand" />
-                <ScalarProperty Name="BackupLocation" ColumnName="BackupLocation" />
-                <ScalarProperty Name="PickLocation" ColumnName="PickLocation" />
-                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
-                <ScalarProperty Name="ProductGroup" ColumnName="ProductGroup" />
-                <ScalarProperty Name="UOM" ColumnName="UOM" />
-                <ScalarProperty Name="SupplierSKU" ColumnName="SupplierSKU" />
-                <ScalarProperty Name="SupplierContractExpiryDate" ColumnName="SupplierContractExpiryDate" />
-                <ScalarProperty Name="SupplierContractNumber" ColumnName="SupplierContractNumber" />
-                <ScalarProperty Name="TempOldPrice" ColumnName="TempOldPrice" />
-                <ScalarProperty Name="DaysUse" ColumnName="DaysUse" />
-                <ScalarProperty Name="TempDel" ColumnName="TempDel" />
-                <ScalarProperty Name="TempSKU" ColumnName="TempSKU" />
-                <ScalarProperty Name="DaysInventory" ColumnName="DaysInventory" />
-                <ScalarProperty Name="SuggestedRetailMargin" ColumnName="SuggestedRetailMargin" />
-                <ScalarProperty Name="QtyOnHand" ColumnName="QtyOnHand" />
-                <ScalarProperty Name="SupplierQtyCost" ColumnName="SupplierQtyCost" />
-                <ScalarProperty Name="SupplierQtyUnit" ColumnName="SupplierQtyUnit" />
-                <ScalarProperty Name="LatexFree" ColumnName="LatexFree" />
-                <ScalarProperty Name="PST" ColumnName="PST" />
-                <ScalarProperty Name="GST" ColumnName="GST" />
-                <ScalarProperty Name="Size" ColumnName="Size" />
-                <ScalarProperty Name="UPCCode" ColumnName="UPCCode" />
-                <ScalarProperty Name="ManufSKU" ColumnName="ManufSKU" />
-                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
-                <ScalarProperty Name="Product" ColumnName="Product" />
-                
-                <ScalarProperty Name="ManufID" ColumnName="ManufID" />
-                <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-                <ScalarProperty Name="InventoryID" ColumnName="InventoryID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblPatients">
-            <EntityTypeMapping TypeName="SWCCACModel.tblPatient">
-              <MappingFragment StoreEntitySet="tblPatient">
-                <ScalarProperty Name="PatientID" ColumnName="PatientID" />
-                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
-                <ScalarProperty Name="TrackingNo" ColumnName="TrackingNo" />
-                <ScalarProperty Name="CCACID" ColumnName="CCACID" />
-                <ScalarProperty Name="PatCWId" ColumnName="PatCWId" />
-                <ScalarProperty Name="FHTId" ColumnName="FHTId" />
-                <ScalarProperty Name="Demographic1ID" ColumnName="Demographic1ID" />
-                <ScalarProperty Name="Demographic2ID" ColumnName="Demographic2ID" />
-                <ScalarProperty Name="DrugCard" ColumnName="DrugCard" />
-                <ScalarProperty Name="PatientOHIP" ColumnName="PatientOHIP" />
-                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="Street1" ColumnName="Street1" />
-                <ScalarProperty Name="Street2" ColumnName="Street2" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
-                <ScalarProperty Name="PatientSince" ColumnName="PatientSince" />
-                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
-                <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
-                <ScalarProperty Name="DeliveryAreaID" ColumnName="DeliveryAreaID" />
-                <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
-                <ScalarProperty Name="NotificationMethod" ColumnName="NotificationMethod" />
-                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
-                <ScalarProperty Name="dtLastRevised" ColumnName="dtLastRevised" />
-                <ScalarProperty Name="SSMA_TimeStamp" ColumnName="SSMA_TimeStamp" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

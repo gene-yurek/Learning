@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SWCCACModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientID" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="FHNId" Type="int" />
+    <Property Name="InvoiceNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderTypeID" Type="int" />
+    <Property Name="NursingAgencyId" Type="int" />
+    <Property Name="AgencyID" Type="int" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="DriverID" Type="int" />
+    <Property Name="ToBeCollected$" Type="money" />
+    <Property Name="OrderDate" Type="datetime" />
+    <Property Name="OrderTime" Type="time" Precision="0" />
+    <Property Name="CCACPO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DatePromised" Type="datetime" />
+    <Property Name="TimePromised" Type="time" Precision="0" />
+    <Property Name="OrderNote" Type="nvarchar(max)" />
+    <Property Name="Collected$" Type="money" />
+    <Property Name="DateDelivered" Type="datetime" />
+    <Property Name="TimeDelivered" Type="time" Precision="0" />
+    <Property Name="SalesPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="Paid" Type="bit" />
+    <Property Name="OrdDatePaid" Type="datetime" />
+    <Property Name="Closed" Type="bit" />
+    <Property Name="Audited" Type="bit" />
+    <Property Name="OrderDelCost" Type="money" />
+    <Property Name="DeliverNote" Type="nvarchar" MaxLength="100" />
+    <Property Name="DeliveryFailureReason" Type="int" />
+    <Property Name="DeliveryFailureComments" Type="nvarchar(max)" />
+    <Property Name="PrescriptionIncluded" Type="bit" />
+    <Property Name="HazardousMaterials" Type="bit" />
+    <Property Name="Refrigerate" Type="bit" />
+    <Property Name="CCACOrderType" Type="nvarchar" MaxLength="1" />
+    <Property Name="PMILinkId" Type="int" />
+    <Property Name="BilltoAgency" Type="nvarchar" MaxLength="50" />
+    <Property Name="Terms" Type="nvarchar" MaxLength="50" />
+    <Property Name="ShipVia" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrderedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="DeliveryCategory" Type="tinyint" />
+    <Property Name="TimeOut" Type="datetime" />
+    <Property Name="DatePickup" Type="datetime" />
+    <Property Name="TimePickup" Type="time" Precision="0" />
+    <Property Name="SPPaymentDate" Type="datetime" />
+    <Property Name="ynPaySP" Type="bit" />
+    <Property Name="ynUpdateDeliveryDate" Type="bit" />
+    <Property Name="StatusId" Type="smallint" />
+    <Property Name="dtLastRevised" Type="datetime" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblPatient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyId" Type="int" />
+    <Property Name="TrackingNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CCACID" Type="int" Nullable="false" />
+    <Property Name="PatCWId" Type="int" />
+    <Property Name="FHTId" Type="int" />
+    <Property Name="Demographic1ID" Type="int" />
+    <Property Name="Demographic2ID" Type="int" />
+    <Property Name="DrugCard" Type="nvarchar" MaxLength="50" />
+    <Property Name="PatientOHIP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Salutation" Type="nvarchar" MaxLength="10" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Street1" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Street2" Type="nvarchar" MaxLength="50" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="PostalCode" Type="nvarchar" MaxLength="7" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="255" />
+    <Property Name="PatientSince" Type="datetime" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="1" />
+    <Property Name="SpecialInstructions" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nvarchar" MaxLength="15" />
+    <Property Name="Diagnosis" Type="nvarchar(max)" />
+    <Property Name="DeliveryAreaID" Type="int" />
+    <Property Name="DeliveryNote" Type="nvarchar" MaxLength="255" />
+    <Property Name="NotificationMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="dtLastRevised" Type="datetime" />
+    <Property Name="SSMA_TimeStamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <Association Name="tblOrder${90EF156F-C203-4156-A7FC-C9A8CFDAC228}">
+    <End Role="tblPatient" Type="Self.tblPatient" Multiplicity="1" />
+    <End Role="tblOrder" Type="Self.tblOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPatient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="tblOrder">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SWCCACModelStoreContainer">
+    <EntitySet Name="tblOrder" EntityType="Self.tblOrder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPatient" EntityType="Self.tblPatient" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="tblOrder${90EF156F-C203-4156-A7FC-C9A8CFDAC228}" Association="Self.tblOrder${90EF156F-C203-4156-A7FC-C9A8CFDAC228}">
+      <End Role="tblPatient" EntitySet="tblPatient" />
+      <End Role="tblOrder" EntitySet="tblOrder" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

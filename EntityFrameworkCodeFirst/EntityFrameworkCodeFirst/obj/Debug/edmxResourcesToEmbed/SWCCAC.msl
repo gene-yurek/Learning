@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SWCCACModelStoreContainer" CdmEntityContainer="SWCCACEntities">
+    <EntitySetMapping Name="tblOrders">
+      <EntityTypeMapping TypeName="SWCCACModel.tblOrder">
+        <MappingFragment StoreEntitySet="tblOrder">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="FHNId" ColumnName="FHNId" />
+          <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+          <ScalarProperty Name="OrderTypeID" ColumnName="OrderTypeID" />
+          <ScalarProperty Name="NursingAgencyId" ColumnName="NursingAgencyId" />
+          <ScalarProperty Name="AgencyID" ColumnName="AgencyID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="DriverID" ColumnName="DriverID" />
+          <ScalarProperty Name="ToBeCollected_" ColumnName="ToBeCollected$" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="CCACPO" ColumnName="CCACPO" />
+          <ScalarProperty Name="DatePromised" ColumnName="DatePromised" />
+          <ScalarProperty Name="TimePromised" ColumnName="TimePromised" />
+          <ScalarProperty Name="OrderNote" ColumnName="OrderNote" />
+          <ScalarProperty Name="Collected_" ColumnName="Collected$" />
+          <ScalarProperty Name="DateDelivered" ColumnName="DateDelivered" />
+          <ScalarProperty Name="TimeDelivered" ColumnName="TimeDelivered" />
+          <ScalarProperty Name="SalesPerson" ColumnName="SalesPerson" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="OrdDatePaid" ColumnName="OrdDatePaid" />
+          <ScalarProperty Name="Closed" ColumnName="Closed" />
+          <ScalarProperty Name="Audited" ColumnName="Audited" />
+          <ScalarProperty Name="OrderDelCost" ColumnName="OrderDelCost" />
+          <ScalarProperty Name="DeliverNote" ColumnName="DeliverNote" />
+          <ScalarProperty Name="DeliveryFailureReason" ColumnName="DeliveryFailureReason" />
+          <ScalarProperty Name="DeliveryFailureComments" ColumnName="DeliveryFailureComments" />
+          <ScalarProperty Name="PrescriptionIncluded" ColumnName="PrescriptionIncluded" />
+          <ScalarProperty Name="HazardousMaterials" ColumnName="HazardousMaterials" />
+          <ScalarProperty Name="Refrigerate" ColumnName="Refrigerate" />
+          <ScalarProperty Name="CCACOrderType" ColumnName="CCACOrderType" />
+          <ScalarProperty Name="PMILinkId" ColumnName="PMILinkId" />
+          <ScalarProperty Name="BilltoAgency" ColumnName="BilltoAgency" />
+          <ScalarProperty Name="Terms" ColumnName="Terms" />
+          <ScalarProperty Name="ShipVia" ColumnName="ShipVia" />
+          <ScalarProperty Name="OrderedBy" ColumnName="OrderedBy" />
+          <ScalarProperty Name="DeliveryCategory" ColumnName="DeliveryCategory" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="DatePickup" ColumnName="DatePickup" />
+          <ScalarProperty Name="TimePickup" ColumnName="TimePickup" />
+          <ScalarProperty Name="SPPaymentDate" ColumnName="SPPaymentDate" />
+          <ScalarProperty Name="ynPaySP" ColumnName="ynPaySP" />
+          <ScalarProperty Name="ynUpdateDeliveryDate" ColumnName="ynUpdateDeliveryDate" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPatients">
+      <EntityTypeMapping TypeName="SWCCACModel.tblPatient">
+        <MappingFragment StoreEntitySet="tblPatient">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="TrackingNo" ColumnName="TrackingNo" />
+          <ScalarProperty Name="CCACID" ColumnName="CCACID" />
+          <ScalarProperty Name="PatCWId" ColumnName="PatCWId" />
+          <ScalarProperty Name="FHTId" ColumnName="FHTId" />
+          <ScalarProperty Name="Demographic1ID" ColumnName="Demographic1ID" />
+          <ScalarProperty Name="Demographic2ID" ColumnName="Demographic2ID" />
+          <ScalarProperty Name="DrugCard" ColumnName="DrugCard" />
+          <ScalarProperty Name="PatientOHIP" ColumnName="PatientOHIP" />
+          <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Street1" ColumnName="Street1" />
+          <ScalarProperty Name="Street2" ColumnName="Street2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="PatientSince" ColumnName="PatientSince" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="SpecialInstructions" ColumnName="SpecialInstructions" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="DeliveryAreaID" ColumnName="DeliveryAreaID" />
+          <ScalarProperty Name="DeliveryNote" ColumnName="DeliveryNote" />
+          <ScalarProperty Name="NotificationMethod" ColumnName="NotificationMethod" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
