@@ -1,0 +1,5 @@
+C:\Yurek\GitHub\Learning\EntityFrameworkTest\EntityFrameworkTest\bin\EntityFrameworkTest.dll
+C:\Yurek\GitHub\Learning\EntityFrameworkTest\EntityFrameworkTest\bin\EntityFrameworkTest.pdb
+C:\Yurek\GitHub\Learning\EntityFrameworkTest\EntityFrameworkTest\obj\Debug\EntityFrameworkTest.csprojResolveAssemblyReference.cache
+C:\Yurek\GitHub\Learning\EntityFrameworkTest\EntityFrameworkTest\obj\Debug\EntityFrameworkTest.dll
+C:\Yurek\GitHub\Learning\EntityFrameworkTest\EntityFrameworkTest\obj\Debug\EntityFrameworkTest.pdb
