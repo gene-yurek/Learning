@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EntityFrameworkCodeFirst
+namespace EntityFrameworkCodeFirst.DataAccess
 {
     using System;
     using System.Collections.Generic;

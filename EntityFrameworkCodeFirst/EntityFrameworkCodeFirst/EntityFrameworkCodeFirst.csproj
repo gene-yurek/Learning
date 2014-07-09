@@ -54,35 +54,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\OrderLogic.cs" />
+    <Compile Include="DataAccess\PXMLEntities.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Order.cs">
+    <Compile Include="DataAccess\Order.cs">
       <DependentUpon>SWCCAC.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderDetail.cs">
+    <Compile Include="DataAccess\OrderDetail.cs">
       <DependentUpon>SWCCAC.tt</DependentUpon>
     </Compile>
-    <Compile Include="Patient.cs">
+    <Compile Include="DataAccess\Patient.cs">
       <DependentUpon>SWCCAC.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PXML.cs" />
-    <Compile Include="SWCCAC.Context.cs">
+    <Compile Include="DataAccess\SWCCAC.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SWCCAC.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="SWCCAC.cs">
+    <Compile Include="DataAccess\SWCCAC.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SWCCAC.tt</DependentUpon>
     </Compile>
-    <Compile Include="SWCCAC.Designer.cs">
+    <Compile Include="DataAccess\SWCCAC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SWCCAC.edmx</DependentUpon>
@@ -106,19 +108,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EntityDeploy Include="SWCCAC.edmx">
+    <EntityDeploy Include="DataAccess\SWCCAC.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SWCCAC.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="SWCCAC.Context.tt">
+    <None Include="DataAccess\SWCCAC.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SWCCAC.edmx</DependentUpon>
       <LastGenOutput>SWCCAC.Context.cs</LastGenOutput>
     </None>
-    <None Include="SWCCAC.edmx.diagram">
+    <None Include="DataAccess\SWCCAC.edmx.diagram">
       <DependentUpon>SWCCAC.edmx</DependentUpon>
     </None>
-    <None Include="SWCCAC.tt">
+    <None Include="DataAccess\SWCCAC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SWCCAC.cs</LastGenOutput>
       <DependentUpon>SWCCAC.edmx</DependentUpon>
